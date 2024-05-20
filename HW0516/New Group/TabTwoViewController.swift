@@ -18,91 +18,64 @@ class TabTwoViewController: UIViewController {
     
     @IBOutlet var resultLabel: UILabel!
     
-
+    @IBOutlet var tabButtons: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setTitle()
+        setTextField()
+        
+        designButton(firstButton, title: "공개 예정", image: "blue", titleColor: .black, backgroundColor: .white)
+        designButton(secondButton, title: "모두의 인기 컨텐츠", image: "turquoise", titleColor: .white, backgroundColor: .black)
+        designButton(thirdButton, title: "탑 10 시리즈", image: "pink", titleColor: .white, backgroundColor: .black)
+        
+        designResultLabel()
+        
+    }
+    
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func tabButtonTapped(_ sender: UIButton) {
+        let tag = sender.tag
+        for i in 0...2 {
+            tabButtons[i].backgroundColor = .clear
+            tabButtons[i].setTitleColor(.white, for: .normal)
+        }
+        tabButtons[tag].backgroundColor = .white
+        tabButtons[tag].setTitleColor(.black, for: .normal)
+        
+        resultLabel.text = tabButtons[tag].currentTitle ?? ""
+        
+    }
+    
+    func setTitle() {
         tabTwoTitleLabel.text = "NEW & HOT 검색"
         tabTwoTitleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
-        
+    }
+    
+    func setTextField() {
         searchTextField.placeholder = "게임, 시리즈, 영화를 검색하세요..."
         searchTextField.backgroundColor = .darkGray
         searchTextField.layer.cornerRadius = 5
-        
-        // button style -> default
-        // 이미지
-        let image = UIImage(named: "blue")?.withRenderingMode(.alwaysOriginal)
-        let image2 = UIImage(systemName: "star")?.withTintColor(.black)
-        
-        firstButton.titleLabel?.font = .boldSystemFont(ofSize: 30)
-        firstButton.setTitle("공개 예정", for: .normal)
-        firstButton.setTitleColor(.black, for: .normal)
-        firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 10)
-        firstButton.setImage(image2, for: .normal)
-        firstButton.backgroundColor = .white
-        firstButton.layer.cornerRadius = 15
-        
-        secondButton.setTitle("모두의 인기 컨텐츠", for: .normal)
-        secondButton.setTitleColor(.white, for: .normal)
-        secondButton.titleLabel?.font = UIFont.systemFont(ofSize: 10)
-        secondButton.setImage(UIImage(named: "turquoise")!, for: .normal)
-        secondButton.backgroundColor = .clear
-        secondButton.layer.cornerRadius = 15
-        
-        thirdButton.setTitle("탑 10 시리즈", for: .normal)
-        thirdButton.setTitleColor(.white, for: .normal)
-        thirdButton.titleLabel?.font = UIFont.systemFont(ofSize: 10)
-        thirdButton.setImage(UIImage(named: "pink")!, for: .normal)
-        thirdButton.backgroundColor = .clear
-        thirdButton.layer.cornerRadius = 15
-        
+    }
+    
+    func designButton(_ button: UIButton, title: String, image: String, titleColor: UIColor, backgroundColor: UIColor) {
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(titleColor, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        button.setImage(UIImage(named: image)!, for: .normal)
+        button.backgroundColor = backgroundColor
+        button.layer.cornerRadius = 15
+    }
+    
+    func designResultLabel() {
         resultLabel.text = "공개 예정"
         resultLabel.font = .systemFont(ofSize: 30)
         resultLabel.textAlignment = .center
-        
     }
-    
-    @IBAction func firstButtonTapped(_ sender: UIButton) {
-        print("공개 예정")
-        firstButton.backgroundColor = .white
-        firstButton.setTitleColor(.black, for: .normal)
-        
-        secondButton.backgroundColor = .clear
-        secondButton.setTitleColor(.white, for: .normal)
-        thirdButton.backgroundColor = .clear
-        thirdButton.setTitleColor(.white, for: .normal)
-        
-        resultLabel.text = "공개 예정"
-        
-    }
-    
-    @IBAction func secondButtonTapped(_ sender: UIButton) {
-        print("모두의 인기 컨텐츠")
-        secondButton.backgroundColor = .white
-        secondButton.setTitleColor(.black, for: .normal)
-        
-        firstButton.backgroundColor = .clear
-        firstButton.setTitleColor(.white, for: .normal)
-        thirdButton.backgroundColor = .clear
-        thirdButton.setTitleColor(.white, for: .normal)
-        
-        resultLabel.text = "모두의 인기 컨텐츠"
-    }
-    
-    @IBAction func thirdButtonTapped(_ sender: UIButton) {
-        print("탑 10 시리즈")
-        thirdButton.backgroundColor = .white
-        thirdButton.setTitleColor(.black, for: .normal)
-        
-        firstButton.backgroundColor = .clear
-        firstButton.setTitleColor(.white, for: .normal)
-        secondButton.backgroundColor = .clear
-        secondButton.setTitleColor(.white, for: .normal)
-        
-        resultLabel.text = "탑 10 시리즈"
-    }
-    
-    
 
 }
 
