@@ -43,8 +43,6 @@ class TabOneViewController: UIViewController {
         
         homeTabTitleNavigationItem.title = "고래밥님"
         homeTabTitleNavigationItem.rightBarButtonItem?.title = "회원가입"
-//        tabOneTitleLabel.text = "고래밥님"
-//        tabOneTitleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         
         homeImageView.image = UIImage(named: "노량")
         homeImageView.contentMode = .scaleAspectFill
