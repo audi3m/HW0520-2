@@ -9,8 +9,6 @@ import UIKit
 
 class TabThreeViewController: UIViewController {
     
-    @IBOutlet var tabThreeTitleLabel: UILabel!
-    
     @IBOutlet var tabExplanationLabel: UILabel!
     @IBOutlet var tabDetailLabel: UILabel!
     
@@ -22,9 +20,15 @@ class TabThreeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabThreeTitleLabel.text = "컨텐츠 저장 목록"
-        tabThreeTitleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
+        setLabels()
         
+        setImageView()
+        
+        setButtons()
+        
+    }
+    
+    func setLabels() {
         tabExplanationLabel.text = "'나만의 자동 저장' 기능"
         tabExplanationLabel.font = .systemFont(ofSize: 25, weight: .bold)
         tabExplanationLabel.textAlignment = .center
@@ -34,28 +38,26 @@ class TabThreeViewController: UIViewController {
         tabDetailLabel.font = .systemFont(ofSize: 13)
         tabDetailLabel.textColor = .gray
         tabDetailLabel.textAlignment = .center
-        
+    }
+    
+    func setImageView() {
         sampleImageView.backgroundColor = .gray
         sampleImageView.image = UIImage(named: "dummy")
         sampleImageView.contentMode = .scaleAspectFill
-        
+    }
+    
+    func setButtons() {
         setButton.setTitle("설정하기", for: .normal)
         setButton.titleLabel?.font = .systemFont(ofSize: 25, weight: .bold)
         setButton.tintColor = .white
         setButton.backgroundColor = .blue
         setButton.layer.cornerRadius = 10
         
-        
         searchButton.setTitle("저장 가능한 컨텐츠 살펴보기", for: .normal)
         searchButton.tintColor = .black
         searchButton.backgroundColor = .white
         searchButton.layer.cornerRadius = 10
-        
-        
-        
     }
-    
-
     
 }
 
