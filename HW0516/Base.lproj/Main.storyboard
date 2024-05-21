@@ -54,7 +54,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atv-iJ-X26">
-                                <rect key="frame" x="71.666666666666686" y="677" width="249.99999999999994" height="46"/>
+                                <rect key="frame" x="71.666666666666686" y="677" width="250" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="461-Vn-JgN"/>
                                     <constraint firstAttribute="width" constant="250" id="kdm-ul-JEe"/>
@@ -327,7 +327,6 @@
                             <constraint firstItem="MBF-ge-5s6" firstAttribute="centerX" secondItem="oOR-zX-vHo" secondAttribute="centerX" id="Re2-wb-bVT"/>
                             <constraint firstItem="xDL-MM-nC3" firstAttribute="centerX" secondItem="oOR-zX-vHo" secondAttribute="centerX" id="TCr-uA-VA8"/>
                             <constraint firstItem="MBF-ge-5s6" firstAttribute="width" secondItem="oOR-zX-vHo" secondAttribute="width" multiplier="0.85" id="UQh-ry-CpF"/>
-                            <constraint firstItem="SRz-YP-zps" firstAttribute="width" secondItem="oOR-zX-vHo" secondAttribute="width" multiplier="0.195929" id="XpB-2n-5Km"/>
                             <constraint firstItem="8QU-wb-Y8h" firstAttribute="top" secondItem="Iaq-xm-cPE" secondAttribute="bottom" constant="13.67" id="Zqd-gi-iW6"/>
                             <constraint firstItem="rDb-vM-apb" firstAttribute="width" secondItem="oOR-zX-vHo" secondAttribute="width" multiplier="0.75" id="dcx-L9-QLn"/>
                             <constraint firstItem="vze-od-ZjL" firstAttribute="centerX" secondItem="oOR-zX-vHo" secondAttribute="centerX" id="e2R-fk-idn"/>
